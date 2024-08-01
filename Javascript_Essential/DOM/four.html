@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove in DOM</title>
+</head>
+
+<body style = "background-color: #212121; color: #fff;">
+    <h1>Edit and remove in DOM</h1>
+    <ol class = "language">
+        <li>JAVASRIPT</li>
+    </ol>
+</body>
+<script>
+    
+    function addLanguage(langName) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(listItem);
+    }
+
+    addLanguage("Python");
+    addLanguage("CPP");
+    addLanguage("JAVA");
+    
+    function addOPtiLanguage (langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+
+    addOPtiLanguage("RUST");
+    addOPtiLanguage("C#")
+
+    //edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    //secondLang.innerHTML = "Abhi"
+    console.log(secondLang);
+    const newli = document.createElement('li');
+    newli.textContent = "F#";
+    console.log(newli);
+    secondLang.replaceWith(newli);
+
+    //EDIT
+    const firstLang = document.querySelector("li:nth-child(1)");
+    firstLang.outerHTML = "<li> TypeScript </li>";
+    
+
+    //remove 
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+    
+
+
+
+</script>
+</html>

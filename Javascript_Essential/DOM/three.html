@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element in DOM</title>
+</head>
+<body style = "background-color: #212121; color : #fff;">
+    <h1> ELEMENT IN DOM</h1>
+    
+</body>
+<script>
+   
+   const div = document.createElement('div');
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() *100 +1)
+    div.setAttribute("title","behaviour");
+    div.style.backgroundColor = "red";
+    div.style.padding = "15px";
+
+    //little optimization 
+    //div.innerText = 'aise hi';
+    //use this instead 
+    const addText = document.createTextNode("aise hi node");
+    div.appendChild(addText);
+
+    //now these changes are in the memmory we have to attach this div to the document to get the output 
+    document.body.appendChild(div);
+
+</script>
+</html>
